@@ -4,9 +4,8 @@ import { Terminal, Code2, Menu, X, Sparkles, Volume2, VolumeX, FileText } from '
 const navItems = [
   { id: 'about', label: 'About', code: '01' },
   { id: 'work', label: 'Work', code: '02' },
-  { id: 'lab', label: 'Lab', code: '03' },
-  { id: 'journey', label: 'Journey', code: '04' },
-  { id: 'contact', label: 'Contact', code: '05' },
+  { id: 'journey', label: 'Journey', code: '03' },
+  { id: 'contact', label: 'Contact', code: '04' },
 ];
 
 export default function Navbar({ soundEnabled, setSoundEnabled }) {

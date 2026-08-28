@@ -4,7 +4,6 @@ import CustomCursor from './components/CustomCursor';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Work from './sections/Work';
-import Lab from './sections/Lab';
 import Journey from './sections/Journey';
 import Contact from './sections/Contact';
 import { ArrowUp, Terminal, Heart, Code2 } from 'lucide-react';
@@ -37,7 +36,6 @@ export default function App() {
         <Hero />
         <About />
         <Work />
-        <Lab />
         <Journey />
         <Contact soundEnabled={soundEnabled} />
       </main>
