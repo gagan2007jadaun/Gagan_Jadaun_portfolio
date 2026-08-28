@@ -384,7 +384,7 @@ export default function Hero() {
                 <div>
                   <h4 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#fff' }}>Gagan Jadaun</h4>
                   <span style={{ fontSize: '0.8rem', color: 'var(--accent-cyan)', fontFamily: 'var(--font-mono)' }}>
-                    AI &amp; CS Engineer
+                    CSE - AI &amp; ML Engineer
                   </span>
                 </div>
                 <div

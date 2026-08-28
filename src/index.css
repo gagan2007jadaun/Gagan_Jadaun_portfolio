@@ -162,6 +162,28 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 0 30px rgba(0, 242, 254, 0.6);
 }
 
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 35px rgba(37, 211, 102, 0.8), 0 0 15px #25D366;
+}
+
 .btn-secondary {
   background: rgba(255, 255, 255, 0.05);
   color: var(--text-main);

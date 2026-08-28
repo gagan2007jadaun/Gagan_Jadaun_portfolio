@@ -435,17 +435,15 @@ export default function Contact({ soundEnabled }) {
                 href="https://wa.me/919058201647?text=Hi%20Gagan,%20I%20visited%20your%20portfolio!"
                 target="_blank"
                 rel="noreferrer"
-                className="btn-secondary"
+                className="btn-whatsapp"
                 style={{
                   width: '100%',
                   justifyContent: 'center',
-                  padding: '10px',
-                  fontSize: '0.85rem',
-                  borderColor: 'rgba(37, 211, 102, 0.4)',
-                  color: '#25D366',
+                  padding: '12px',
+                  fontSize: '0.88rem',
                 }}
               >
-                <MessageSquare size={14} color="#25D366" />
+                <MessageSquare size={16} color="#fff" />
                 <span>Chat on WhatsApp</span>
               </a>
             </div>
