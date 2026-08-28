@@ -132,6 +132,7 @@ export default function Contact({ soundEnabled }) {
       <PageTransition>
         <SectionLabel
           number="04"
+          label="CONTACT"
           title="Initiate Contact & Collaboration"
           subtitle="Whether you're looking for a Full-Stack Engineer, AI Developer, or technical collaborator, let's connect."
         />

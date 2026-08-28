@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SectionLabel({ number, title, subtitle, align = 'left' }) {
+export default function SectionLabel({ number, title, subtitle, label, align = 'left' }) {
   const isCenter = align === 'center';
 
   return (
@@ -32,7 +32,7 @@ export default function SectionLabel({ number, title, subtitle, align = 'left' }
       >
         <span>// {number}</span>
         <span style={{ opacity: 0.5 }}>•</span>
-        <span>SECTION</span>
+        <span style={{ textTransform: 'uppercase' }}>{label || 'SECTION'}</span>
       </div>
 
       {/* Main Title */}

@@ -160,6 +160,7 @@ export default function Journey() {
       <PageTransition>
         <SectionLabel
           number="03"
+          label="JOURNEY"
           title="Career Journey & Key Milestones"
           subtitle="From learning the fundamentals to building software, exploring AI, and experimenting with real-world ideas."
         />

@@ -55,6 +55,7 @@ export default function About() {
       <PageTransition>
         <SectionLabel
           number="01"
+          label="ABOUT"
           title="About — The Idea"
           subtitle="Combining deep architectural fundamentals with modern web graphics and AI capabilities."
         />

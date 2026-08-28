@@ -116,6 +116,7 @@ export default function Work() {
       <PageTransition>
         <SectionLabel
           number="02"
+          label="PROJECTS"
           title="Flagship Software Projects"
           subtitle="A selection of high-performance web applications, distributed backend services, and AI solutions I have architected and built."
         />
