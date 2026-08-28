@@ -185,128 +185,225 @@ export default function Hero() {
       {/* Hero Foreground Content */}
       <div
         style={{
-          maxWidth: '1200px',
+          maxWidth: '1240px',
           width: '100%',
           margin: '0 auto',
           position: 'relative',
           zIndex: 10,
         }}
       >
-        <div style={{ maxWidth: '820px' }}>
-          {/* Status Badge */}
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '10px',
-              padding: '6px 16px',
-              borderRadius: '99px',
-              background: 'rgba(0, 242, 254, 0.08)',
-              border: '1px solid rgba(0, 242, 254, 0.25)',
-              color: 'var(--accent-cyan)',
-              fontSize: '0.85rem',
-              fontFamily: 'var(--font-mono)',
-              marginBottom: '24px',
-              backdropFilter: 'blur(10px)',
-            }}
-          >
-            <Sparkles size={14} />
-            <span>GAGAN — CREATIVE SOFTWARE ENGINEER</span>
-          </div>
-
-          {/* Headline */}
-          <h1
-            style={{
-              fontSize: 'clamp(2.8rem, 6vw, 4.5rem)',
-              fontWeight: 900,
-              color: '#ffffff',
-              lineHeight: 1.08,
-              letterSpacing: '-0.03em',
-              marginBottom: '20px',
-            }}
-          >
-            Crafting Scalable <span className="gradient-text-cyan">Systems</span> &amp; Modern <span className="gradient-text-purple">Web Experiences</span>.
-          </h1>
-
-          {/* Typing Subtitle */}
-          <div
-            style={{
-              height: '36px',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              fontSize: '1.25rem',
-              color: 'var(--accent-blue)',
-              fontFamily: 'var(--font-mono)',
-              marginBottom: '28px',
-            }}
-          >
-            <Terminal size={20} color="var(--accent-cyan)" />
-            <span>{displayText}</span>
-            <span
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '48px',
+            alignItems: 'center',
+          }}
+        >
+          {/* Left Column: Hero Text & CTAs */}
+          <div>
+            {/* Status Badge */}
+            <div
               style={{
-                width: '8px',
-                height: '20px',
-                backgroundColor: 'var(--accent-cyan)',
-                display: 'inline-block',
-                animation: 'pulse-dot 1s infinite',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                padding: '6px 16px',
+                borderRadius: '99px',
+                background: 'rgba(0, 242, 254, 0.08)',
+                border: '1px solid rgba(0, 242, 254, 0.25)',
+                color: 'var(--accent-cyan)',
+                fontSize: '0.85rem',
+                fontFamily: 'var(--font-mono)',
+                marginBottom: '24px',
+                backdropFilter: 'blur(10px)',
               }}
-            />
-          </div>
-
-          {/* Bio text */}
-          <p
-            style={{
-              fontSize: '1.1rem',
-              color: 'var(--text-muted)',
-              lineHeight: 1.7,
-              marginBottom: '40px',
-              maxWidth: '680px',
-            }}
-          >
-            I specialize in building fault-tolerant microservices, high-throughput cloud architectures, AI-driven applications, and immersive interactive web interfaces that combine engineering rigor with aesthetic elegance.
-          </p>
-
-          {/* Action Buttons */}
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '16px',
-              marginBottom: '60px',
-            }}
-          >
-            <a href="#work" className="btn-primary">
-              <span>View Flagship Projects</span>
-              <ArrowRight size={18} />
-            </a>
-
-            <button
-              onClick={() => setShowResumeModal(true)}
-              className="btn-secondary"
-              style={{ borderColor: 'rgba(0, 242, 254, 0.3)' }}
             >
-              <Download size={18} color="var(--accent-cyan)" />
-              <span>Resume / CV</span>
-            </button>
+              <Sparkles size={14} />
+              <span>GAGAN — CREATIVE SOFTWARE ENGINEER</span>
+            </div>
+
+            {/* Headline */}
+            <h1
+              style={{
+                fontSize: 'clamp(2.5rem, 5.5vw, 4.2rem)',
+                fontWeight: 900,
+                color: '#ffffff',
+                lineHeight: 1.08,
+                letterSpacing: '-0.03em',
+                marginBottom: '20px',
+              }}
+            >
+              I <span className="gradient-text-cyan">BUILD</span>. I <span className="gradient-text-purple">EXPERIMENT</span>. I <span style={{ color: 'var(--accent-pink)' }}>ITERATE</span>.
+            </h1>
+
+            {/* Typing Subtitle */}
+            <div
+              style={{
+                height: '36px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontSize: '1.2rem',
+                color: 'var(--accent-blue)',
+                fontFamily: 'var(--font-mono)',
+                marginBottom: '28px',
+              }}
+            >
+              <Terminal size={20} color="var(--accent-cyan)" />
+              <span>{displayText}</span>
+              <span
+                style={{
+                  width: '8px',
+                  height: '20px',
+                  backgroundColor: 'var(--accent-cyan)',
+                  display: 'inline-block',
+                  animation: 'pulse-dot 1s infinite',
+                }}
+              />
+            </div>
+
+            {/* Bio text */}
+            <p
+              style={{
+                fontSize: '1.15rem',
+                color: 'var(--text-muted)',
+                lineHeight: 1.7,
+                marginBottom: '36px',
+                maxWidth: '640px',
+              }}
+            >
+              A Computer Science engineer exploring AI, software and interactive experiences.
+            </p>
+
+            {/* Action Buttons */}
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '16px',
+                marginBottom: '48px',
+              }}
+            >
+              <a href="#work" className="btn-primary">
+                <span>View Flagship Projects</span>
+                <ArrowRight size={18} />
+              </a>
+
+              <button
+                onClick={() => setShowResumeModal(true)}
+                className="btn-secondary"
+                style={{ borderColor: 'rgba(0, 242, 254, 0.3)' }}
+              >
+                <Download size={18} color="var(--accent-cyan)" />
+                <span>Resume / CV</span>
+              </button>
+            </div>
+
+            {/* Key Metrics Stats Counter */}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '20px',
+                paddingTop: '20px',
+                borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+              }}
+            >
+              <div>
+                <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--accent-cyan)', fontFamily: 'var(--font-heading)' }}>
+                  Fresher
+                </div>
+                <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
+                  Experience Level
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Key Metrics Stats Counter */}
+          {/* Right Column: Hero Profile Picture Card */}
           <div
             style={{
               display: 'flex',
+              justifyContent: 'center',
               alignItems: 'center',
-              gap: '20px',
-              paddingTop: '24px',
-              borderTop: '1px solid rgba(255, 255, 255, 0.08)',
             }}
           >
-            <div>
-              <div style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--accent-cyan)', fontFamily: 'var(--font-heading)' }}>
-                Fresher
+            <div
+              className="glass-card"
+              style={{
+                position: 'relative',
+                padding: '16px',
+                background: 'linear-gradient(135deg, rgba(0, 242, 254, 0.08) 0%, rgba(121, 40, 202, 0.08) 100%)',
+                border: '1px solid rgba(0, 242, 254, 0.3)',
+                borderRadius: '24px',
+                boxShadow: '0 0 40px rgba(0, 242, 254, 0.15)',
+                maxWidth: '360px',
+                width: '100%',
+              }}
+            >
+              <div
+                style={{
+                  borderRadius: '16px',
+                  overflow: 'hidden',
+                  position: 'relative',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  aspectRatio: '3/4',
+                }}
+              >
+                <img
+                  src="/images/gagan-profile.png"
+                  alt="Gagan Jadaun"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center top',
+                    display: 'block',
+                  }}
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(180deg, transparent 65%, rgba(9, 12, 21, 0.9) 100%)',
+                  }}
+                />
               </div>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
-                Experience Level
+
+              {/* Caption Tag */}
+              <div
+                style={{
+                  marginTop: '16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '4px 8px',
+                }}
+              >
+                <div>
+                  <h4 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#fff' }}>Gagan Jadaun</h4>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--accent-cyan)', fontFamily: 'var(--font-mono)' }}>
+                    AI &amp; CS Engineer
+                  </span>
+                </div>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontSize: '0.75rem',
+                    color: 'var(--accent-emerald)',
+                    fontFamily: 'var(--font-mono)',
+                    background: 'rgba(52, 211, 153, 0.1)',
+                    padding: '4px 10px',
+                    borderRadius: '99px',
+                    border: '1px solid rgba(52, 211, 153, 0.3)',
+                  }}
+                >
+                  <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--accent-emerald)' }} />
+                  <span>Available</span>
+                </div>
               </div>
             </div>
           </div>

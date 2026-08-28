@@ -103,9 +103,28 @@ export default function About() {
                 padding: '28px',
                 background: 'rgba(255, 255, 255, 0.02)',
                 borderLeft: '4px solid var(--accent-cyan)',
+                display: 'flex',
+                gap: '16px',
+                alignItems: 'center',
               }}
             >
-              I'm <strong style={{ color: '#fff' }}>Gagan Jadaun</strong>, a Computer Science &amp; Engineering student specializing in <strong style={{ color: 'var(--accent-cyan)' }}>Artificial Intelligence &amp; Machine Learning</strong> at Lovely Professional University.
+              <img
+                src="/images/gagan-profile.png"
+                alt="Gagan Jadaun"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  borderRadius: '16px',
+                  objectFit: 'cover',
+                  objectPosition: 'center top',
+                  border: '2px solid var(--accent-cyan)',
+                  boxShadow: '0 0 15px rgba(0, 242, 254, 0.3)',
+                  flexShrink: 0,
+                }}
+              />
+              <div>
+                I'm <strong style={{ color: '#fff' }}>Gagan Jadaun</strong>, a Computer Science &amp; Engineering student specializing in <strong style={{ color: 'var(--accent-cyan)' }}>Artificial Intelligence &amp; Machine Learning</strong> at Lovely Professional University.
+              </div>
             </div>
 
             <div
