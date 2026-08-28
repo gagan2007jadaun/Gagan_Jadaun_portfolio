@@ -281,11 +281,6 @@ export default function Hero() {
               <ArrowRight size={18} />
             </a>
 
-            <a href="#lab" className="btn-secondary">
-              <Cpu size={18} />
-              <span>Interactive Lab</span>
-            </a>
-
             <button
               onClick={() => setShowResumeModal(true)}
               className="btn-secondary"
