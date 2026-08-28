@@ -78,7 +78,7 @@ export default function App() {
               <Terminal size={16} color="#fff" />
             </div>
             <span style={{ fontWeight: 800, fontFamily: 'var(--font-heading)', fontSize: '1.1rem' }}>
-              GAGAN<span style={{ color: 'var(--accent-cyan)' }}>.DEV</span>
+              GAGAN<span style={{ color: 'var(--accent-cyan)' }}> JADAUN</span>
             </span>
           </div>
 

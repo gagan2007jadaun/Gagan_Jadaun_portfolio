@@ -299,8 +299,8 @@ export default function Hero() {
           {/* Key Metrics Stats Counter */}
           <div
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+              display: 'flex',
+              alignItems: 'center',
               gap: '20px',
               paddingTop: '24px',
               borderTop: '1px solid rgba(255, 255, 255, 0.08)',
@@ -312,24 +312,6 @@ export default function Hero() {
               </div>
               <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
                 Experience Level
-              </div>
-            </div>
-
-            <div>
-              <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#fff', fontFamily: 'var(--font-heading)' }}>
-                99.99<span style={{ color: 'var(--accent-cyan)' }}>%</span>
-              </div>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
-                Uptime SLA
-              </div>
-            </div>
-
-            <div>
-              <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#fff', fontFamily: 'var(--font-heading)' }}>
-                1,200<span style={{ color: 'var(--accent-cyan)' }}>+</span>
-              </div>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
-                GitHub Commits
               </div>
             </div>
           </div>

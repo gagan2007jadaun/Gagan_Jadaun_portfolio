@@ -111,7 +111,7 @@ export default function Navbar({ soundEnabled, setSoundEnabled }) {
             <Terminal size={20} color="#fff" />
           </div>
           <span style={{ letterSpacing: '-0.03em' }}>
-            GAGAN<span style={{ color: 'var(--accent-cyan)' }}>.DEV</span>
+            GAGAN<span style={{ color: 'var(--accent-cyan)' }}> JADAUN</span>
           </span>
         </a>
 
