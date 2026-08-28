@@ -377,23 +377,14 @@ export default function Contact({ soundEnabled }) {
                 )}
               </div>
 
-              <div style={{ display: 'flex', gap: '10px' }}>
-                <a
-                  href="mailto:gagan2020jadon@gmail.com"
-                  className="btn-primary"
-                  style={{ flex: 1, justifyContent: 'center', padding: '10px', fontSize: '0.85rem' }}
-                >
-                  <Mail size={14} />
-                  <span>Send Mail</span>
-                </a>
-                <button
-                  onClick={handleCopyEmail}
-                  className="btn-secondary"
-                  style={{ padding: '10px 14px', fontSize: '0.85rem' }}
-                >
-                  <Copy size={14} />
-                </button>
-              </div>
+              <a
+                href="mailto:gagan2020jadon@gmail.com"
+                className="btn-primary"
+                style={{ width: '100%', justifyContent: 'center', padding: '12px', fontSize: '0.88rem' }}
+              >
+                <Mail size={16} />
+                <span>Send Mail</span>
+              </a>
             </div>
 
             {/* Option 2: WhatsApp */}
