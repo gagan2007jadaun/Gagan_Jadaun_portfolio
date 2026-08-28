@@ -313,163 +313,141 @@ export default function Contact({ soundEnabled }) {
           </div>
         </PageTransition>
 
-        {/* Right Column: Contact Message Form */}
+        {/* Right Column: Direct Contact Channels (WhatsApp, Mail, Telegram) */}
         <PageTransition delay={200}>
           <div
             className="glass-card"
             style={{
               padding: '32px',
               background: 'var(--bg-secondary)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px',
             }}
           >
-            <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>
-              Send Direct Message
-            </h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '24px' }}>
-              Drop a note directly to Gagan's inbox. Guaranteed reply within 24 hours.
-            </p>
+            <div>
+              <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>
+                Direct Contact Channels
+              </h3>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+                Choose your preferred communication channel to reach out directly.
+              </p>
+            </div>
 
-            {submitted ? (
-              <div
-                style={{
-                  background: 'rgba(16, 185, 129, 0.1)',
-                  border: '1px solid var(--accent-emerald)',
-                  borderRadius: '12px',
-                  padding: '32px',
-                  textAlign: 'center',
-                }}
-              >
-                <Sparkles size={36} color="var(--accent-emerald)" style={{ margin: '0 auto 16px auto' }} />
-                <h4 style={{ fontSize: '1.4rem', color: '#fff', marginBottom: '8px' }}>Message Transmitted!</h4>
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '20px' }}>
-                  Your message has been dispatched directly to <strong style={{ color: 'var(--accent-cyan)' }}>gagan2020jadon@gmail.com</strong>.
-                </p>
-                <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    className="btn-secondary"
-                    style={{ padding: '8px 18px', fontSize: '0.85rem' }}
+            {/* Option 1: Mail */}
+            <div
+              style={{
+                background: 'rgba(255, 255, 255, 0.02)',
+                border: '1px solid rgba(0, 242, 254, 0.2)',
+                borderRadius: '14px',
+                padding: '20px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '14px',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <div
+                    style={{
+                      width: '40px',
+                      height: '40px',
+                      borderRadius: '10px',
+                      background: 'rgba(0, 242, 254, 0.1)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: 'var(--accent-cyan)',
+                    }}
                   >
-                    Send Another Message
-                  </button>
-                  {mailtoLink && (
-                    <a
-                      href={mailtoLink}
-                      className="btn-primary"
-                      style={{ padding: '8px 18px', fontSize: '0.85rem' }}
-                    >
-                      <Mail size={14} />
-                      <span>Open in Email App</span>
-                    </a>
-                  )}
+                    <Mail size={20} />
+                  </div>
+                  <div>
+                    <h4 style={{ fontSize: '1.05rem', color: '#fff', fontWeight: 700 }}>Direct Email</h4>
+                    <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
+                      gagan2020jadon@gmail.com
+                    </span>
+                  </div>
                 </div>
+                {copiedEmail && (
+                  <span style={{ fontSize: '0.75rem', color: 'var(--accent-emerald)', fontFamily: 'var(--font-mono)' }}>
+                    ✓ Copied
+                  </span>
+                )}
               </div>
-            ) : (
-              <form onSubmit={handleFormSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <div>
-                  <label style={{ display: 'block', color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '6px', fontFamily: 'var(--font-mono)' }}>
-                    Your Name *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="e.g. Alex Mercer"
-                    style={{
-                      width: '100%',
-                      background: 'rgba(255, 255, 255, 0.03)',
-                      border: '1px solid rgba(255, 255, 255, 0.08)',
-                      borderRadius: '8px',
-                      padding: '12px 16px',
-                      color: '#fff',
-                      fontSize: '0.95rem',
-                    }}
-                  />
-                </div>
 
-                <div>
-                  <label style={{ display: 'block', color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '6px', fontFamily: 'var(--font-mono)' }}>
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="alex@company.com"
-                    style={{
-                      width: '100%',
-                      background: 'rgba(255, 255, 255, 0.03)',
-                      border: '1px solid rgba(255, 255, 255, 0.08)',
-                      borderRadius: '8px',
-                      padding: '12px 16px',
-                      color: '#fff',
-                      fontSize: '0.95rem',
-                    }}
-                  />
-                </div>
-
-                <div>
-                  <label style={{ display: 'block', color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '6px', fontFamily: 'var(--font-mono)' }}>
-                    Subject / Role Type
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    placeholder="e.g. Senior Full-Stack Architect Position"
-                    style={{
-                      width: '100%',
-                      background: 'rgba(255, 255, 255, 0.03)',
-                      border: '1px solid rgba(255, 255, 255, 0.08)',
-                      borderRadius: '8px',
-                      padding: '12px 16px',
-                      color: '#fff',
-                      fontSize: '0.95rem',
-                    }}
-                  />
-                </div>
-
-                <div>
-                  <label style={{ display: 'block', color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '6px', fontFamily: 'var(--font-mono)' }}>
-                    Message *
-                  </label>
-                  <textarea
-                    required
-                    rows={4}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Tell me about your project goals or team needs..."
-                    style={{
-                      width: '100%',
-                      background: 'rgba(255, 255, 255, 0.03)',
-                      border: '1px solid rgba(255, 255, 255, 0.08)',
-                      borderRadius: '8px',
-                      padding: '12px 16px',
-                      color: '#fff',
-                      fontSize: '0.95rem',
-                      resize: 'vertical',
-                    }}
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
+              <div style={{ display: 'flex', gap: '10px' }}>
+                <a
+                  href="mailto:gagan2020jadon@gmail.com"
                   className="btn-primary"
+                  style={{ flex: 1, justifyContent: 'center', padding: '10px', fontSize: '0.85rem' }}
+                >
+                  <Mail size={14} />
+                  <span>Send Mail</span>
+                </a>
+                <button
+                  onClick={handleCopyEmail}
+                  className="btn-secondary"
+                  style={{ padding: '10px 14px', fontSize: '0.85rem' }}
+                >
+                  <Copy size={14} />
+                </button>
+              </div>
+            </div>
+
+            {/* Option 2: WhatsApp */}
+            <div
+              style={{
+                background: 'rgba(255, 255, 255, 0.02)',
+                border: '1px solid rgba(37, 211, 102, 0.25)',
+                borderRadius: '14px',
+                padding: '20px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '14px',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div
                   style={{
-                    width: '100%',
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '10px',
+                    background: 'rgba(37, 211, 102, 0.1)',
+                    display: 'flex',
+                    alignItems: 'center',
                     justifyContent: 'center',
-                    padding: '14px',
-                    marginTop: '8px',
+                    color: '#25D366',
                   }}
                 >
-                  <Send size={16} />
-                  <span>{isSubmitting ? 'Transmitting Message...' : 'Send Message'}</span>
-                </button>
-              </form>
-            )}
+                  <MessageSquare size={20} />
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '1.05rem', color: '#fff', fontWeight: 700 }}>WhatsApp Chat</h4>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
+                    Instant Direct Messaging
+                  </span>
+                </div>
+              </div>
+
+              <a
+                href="https://wa.me/919058201647?text=Hi%20Gagan,%20I%20visited%20your%20portfolio!"
+                target="_blank"
+                rel="noreferrer"
+                className="btn-secondary"
+                style={{
+                  width: '100%',
+                  justifyContent: 'center',
+                  padding: '10px',
+                  fontSize: '0.85rem',
+                  borderColor: 'rgba(37, 211, 102, 0.4)',
+                  color: '#25D366',
+                }}
+              >
+                <MessageSquare size={14} color="#25D366" />
+                <span>Chat on WhatsApp</span>
+              </a>
+            </div>
           </div>
         </PageTransition>
       </div>
