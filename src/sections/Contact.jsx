@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import SectionLabel from '../components/SectionLabel';
 import PageTransition from '../components/PageTransition';
 import confetti from 'canvas-confetti';
-import { Mail, Send, Terminal, Github, Linkedin, Twitter, Copy, Check, Sparkles, MessageSquare, MapPin } from 'lucide-react';
+import { Mail, Send, Terminal, Github, Linkedin, Twitter, Copy, Check, Sparkles, MessageSquare, MapPin, Code2, Award, Globe, BookOpen } from 'lucide-react';
 
 export default function Contact({ soundEnabled }) {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [mailtoLink, setMailtoLink] = useState('');
 
   // Terminal state
   const [cliInput, setCliInput] = useState('');
@@ -16,13 +17,40 @@ export default function Contact({ soundEnabled }) {
     { type: 'system', text: 'Gagan OS v4.2 Terminal [Type "help" for available commands]' },
   ]);
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
     setIsSubmitting(true);
 
-    setTimeout(() => {
+    const targetEmail = 'gagan2020jadon@gmail.com';
+    const mailSubject = formData.subject || `New Contact Message from ${formData.name}`;
+    const mailBody = `Name: ${formData.name}\nEmail: ${formData.email}\nSubject: ${formData.subject}\n\nMessage:\n${formData.message}`;
+
+    // Construct mailto link fallback
+    const directMailto = `mailto:${targetEmail}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+    setMailtoLink(directMailto);
+
+    try {
+      // Dispatch payload to Web3Forms API targeting gagan2020jadon@gmail.com
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: 'b149b5c3-16a8-4e3a-963d-86f77ecb4731', // Web3Forms direct key
+          name: formData.name,
+          email: formData.email,
+          subject: mailSubject,
+          message: mailBody,
+          to_email: targetEmail,
+        }),
+      });
+    } catch (err) {
+      console.log('Email API dispatch notice:', err);
+    } finally {
       setIsSubmitting(false);
       setSubmitted(true);
 
@@ -35,11 +63,11 @@ export default function Contact({ soundEnabled }) {
       });
 
       setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 1200);
+    }
   };
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('gagan.dev.arch@gmail.com');
+    navigator.clipboard.writeText('gagan2020jadon@gmail.com');
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2500);
   };
@@ -61,18 +89,24 @@ export default function Contact({ soundEnabled }) {
         { type: 'output', text: '  clear     - Wipe terminal history' },
       ];
     } else if (cmd === 'email') {
-      navigator.clipboard.writeText('gagan.dev.arch@gmail.com');
-      response = [{ type: 'output', text: '✓ gagan.dev.arch@gmail.com copied to clipboard!' }];
-    } else if (cmd === 'socials') {
+      navigator.clipboard.writeText('gagan2020jadon@gmail.com');
       response = [
-        { type: 'output', text: 'GitHub:   https://github.com/gagan-dev' },
-        { type: 'output', text: 'LinkedIn: https://linkedin.com/in/gagan-dev-arch' },
-        { type: 'output', text: 'Twitter:  https://x.com/gagan_architect' },
+        { type: 'output', text: 'Email: gagan2020jadon@gmail.com' },
+        { type: 'output', text: '✓ gagan2020jadon@gmail.com copied to clipboard!' }
+      ];
+    } else if (cmd === 'socials' || cmd === 'profiles') {
+      response = [
+        { type: 'output', text: 'GitHub:       https://github.com/gagan2007jadaun' },
+        { type: 'output', text: 'LinkedIn:     https://www.linkedin.com/in/gagan-jadaun-62301932a' },
+        { type: 'output', text: 'LeetCode:     https://leetcode.com/u/gagan2007jadaun/' },
+        { type: 'output', text: 'HackerRank:   https://www.hackerrank.com/profile/gagan2020jadon' },
+        { type: 'output', text: 'HackerEarth:  https://www.hackerearth.com/@gagan2020jadon/' },
+        { type: 'output', text: 'GeeksforGeeks:https://www.geeksforgeeks.org/profile/gagan2007jadaun' },
       ];
     } else if (cmd === 'status') {
-      response = [{ type: 'output', text: 'Status: AVAILABLE for Lead / Senior Staff Software Engineer roles & advisory.' }];
+      response = [{ type: 'output', text: 'Status: AVAILABLE for Software Engineer roles & projects.' }];
     } else if (cmd === 'skills') {
-      response = [{ type: 'output', text: 'Core: React/Next.js, Node.js, Go, Python RAG, Three.js, Kafka, Kubernetes, AWS.' }];
+      response = [{ type: 'output', text: 'Core: React/Next.js, Node.js, Python, C++, Three.js, WebSockets, Tailwind CSS.' }];
     } else if (cmd === 'clear') {
       setCliHistory([]);
       setCliInput('');
@@ -97,9 +131,9 @@ export default function Contact({ soundEnabled }) {
     >
       <PageTransition>
         <SectionLabel
-          number="06"
+          number="05"
           title="Initiate Contact & Collaboration"
-          subtitle="Whether you're looking for a Lead Architect, Senior Full-Stack Engineer, or technical advisor, let's build something extraordinary together."
+          subtitle="Whether you're looking for a Full-Stack Engineer, AI Developer, or technical collaborator, let's connect."
         />
       </PageTransition>
 
@@ -208,41 +242,71 @@ export default function Contact({ soundEnabled }) {
               </form>
             </div>
 
-            {/* Social Buttons */}
+            {/* Social & Coding Platform Buttons */}
             <div>
               <div style={{ fontSize: '0.8rem', color: 'var(--text-dim)', fontFamily: 'var(--font-mono)', marginBottom: '12px' }}>
-                DIRECT NETWORK LINKS
+                CODING &amp; NETWORK PROFILES
               </div>
-              <div style={{ display: 'flex', gap: '12px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/gagan2007jadaun"
                   target="_blank"
                   rel="noreferrer"
                   className="btn-secondary"
-                  style={{ padding: '10px 16px', fontSize: '0.85rem' }}
+                  style={{ padding: '8px 14px', fontSize: '0.8rem' }}
                 >
-                  <Github size={16} />
+                  <Github size={14} />
                   <span>GitHub</span>
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/gagan-jadaun-62301932a"
                   target="_blank"
                   rel="noreferrer"
                   className="btn-secondary"
-                  style={{ padding: '10px 16px', fontSize: '0.85rem' }}
+                  style={{ padding: '8px 14px', fontSize: '0.8rem' }}
                 >
-                  <Linkedin size={16} color="var(--accent-cyan)" />
+                  <Linkedin size={14} color="var(--accent-cyan)" />
                   <span>LinkedIn</span>
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://leetcode.com/u/gagan2007jadaun/"
                   target="_blank"
                   rel="noreferrer"
                   className="btn-secondary"
-                  style={{ padding: '10px 16px', fontSize: '0.85rem' }}
+                  style={{ padding: '8px 14px', fontSize: '0.8rem' }}
                 >
-                  <Twitter size={16} color="var(--accent-blue)" />
-                  <span>Twitter/X</span>
+                  <Code2 size={14} color="var(--accent-amber)" />
+                  <span>LeetCode</span>
+                </a>
+                <a
+                  href="https://www.hackerrank.com/profile/gagan2020jadon"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-secondary"
+                  style={{ padding: '8px 14px', fontSize: '0.8rem' }}
+                >
+                  <Award size={14} color="var(--accent-emerald)" />
+                  <span>HackerRank</span>
+                </a>
+                <a
+                  href="https://www.hackerearth.com/@gagan2020jadon/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-secondary"
+                  style={{ padding: '8px 14px', fontSize: '0.8rem' }}
+                >
+                  <Globe size={14} color="var(--accent-purple)" />
+                  <span>HackerEarth</span>
+                </a>
+                <a
+                  href="https://www.geeksforgeeks.org/profile/gagan2007jadaun"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-secondary"
+                  style={{ padding: '8px 14px', fontSize: '0.8rem' }}
+                >
+                  <BookOpen size={14} color="var(--accent-cyan)" />
+                  <span>GeeksforGeeks</span>
                 </a>
               </div>
             </div>
@@ -278,15 +342,27 @@ export default function Contact({ soundEnabled }) {
                 <Sparkles size={36} color="var(--accent-emerald)" style={{ margin: '0 auto 16px auto' }} />
                 <h4 style={{ fontSize: '1.4rem', color: '#fff', marginBottom: '8px' }}>Message Transmitted!</h4>
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '20px' }}>
-                  Thank you for reaching out. Gagan has received your message and will get back to you shortly.
+                  Your message has been dispatched directly to <strong style={{ color: 'var(--accent-cyan)' }}>gagan2020jadon@gmail.com</strong>.
                 </p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  className="btn-secondary"
-                  style={{ padding: '8px 20px', fontSize: '0.85rem' }}
-                >
-                  Send Another Message
-                </button>
+                <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
+                  <button
+                    onClick={() => setSubmitted(false)}
+                    className="btn-secondary"
+                    style={{ padding: '8px 18px', fontSize: '0.85rem' }}
+                  >
+                    Send Another Message
+                  </button>
+                  {mailtoLink && (
+                    <a
+                      href={mailtoLink}
+                      className="btn-primary"
+                      style={{ padding: '8px 18px', fontSize: '0.85rem' }}
+                    >
+                      <Mail size={14} />
+                      <span>Open in Email App</span>
+                    </a>
+                  )}
+                </div>
               </div>
             ) : (
               <form onSubmit={handleFormSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>

@@ -4,7 +4,6 @@ import CustomCursor from './components/CustomCursor';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Work from './sections/Work';
-import Engineering from './sections/Engineering';
 import Lab from './sections/Lab';
 import Journey from './sections/Journey';
 import Contact from './sections/Contact';
@@ -38,7 +37,6 @@ export default function App() {
         <Hero />
         <About />
         <Work />
-        <Engineering />
         <Lab />
         <Journey />
         <Contact soundEnabled={soundEnabled} />

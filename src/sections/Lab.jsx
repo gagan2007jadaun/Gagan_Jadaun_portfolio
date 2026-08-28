@@ -250,7 +250,7 @@ export default function Lab() {
     >
       <PageTransition>
         <SectionLabel
-          number="04"
+          number="03"
           title="Interactive Creative Lab"
           subtitle="A live sandbox showcasing Web Audio synths, WebGL particle physics, algorithm visualizers, and LLM token stream generators."
         />

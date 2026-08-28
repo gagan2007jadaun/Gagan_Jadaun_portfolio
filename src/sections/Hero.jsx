@@ -307,20 +307,11 @@ export default function Hero() {
             }}
           >
             <div>
-              <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#fff', fontFamily: 'var(--font-heading)' }}>
-                5<span style={{ color: 'var(--accent-cyan)' }}>+</span>
+              <div style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--accent-cyan)', fontFamily: 'var(--font-heading)' }}>
+                Fresher
               </div>
               <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
-                Years Exp.
-              </div>
-            </div>
-
-            <div>
-              <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#fff', fontFamily: 'var(--font-heading)' }}>
-                30<span style={{ color: 'var(--accent-cyan)' }}>+</span>
-              </div>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
-                Projects Shipped
+                Experience Level
               </div>
             </div>
 

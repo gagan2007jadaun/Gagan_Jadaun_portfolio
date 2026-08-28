@@ -12,127 +12,86 @@ const projectCategories = [
 
 const projectsData = [
   {
-    id: 'nexus-stream',
-    title: 'NexusStream — Real-Time Event Bus',
-    category: 'systems',
-    categoryLabel: 'Systems & Cloud',
-    description: 'Distributed pub-sub event streaming platform capable of processing 250,000+ events per second with sub-10ms p99 latency.',
+    id: 'priv-link',
+    title: 'PrivLink — Encrypted Secret Sharing',
+    category: 'fullstack',
+    categoryLabel: 'Security & Full-Stack',
+    description: 'Zero-knowledge encrypted link generator for secure secret transmission, self-destructing credentials, and privacy-first payload storage.',
     metrics: [
-      { label: 'Throughput', value: '250K ops/sec' },
-      { label: 'p99 Latency', value: '< 8.4ms' },
-      { label: 'Uptime', value: '99.999%' },
+      { label: 'Security', value: 'E2E Crypto' },
+      { label: 'Storage', value: 'Zero-Knowledge' },
+      { label: 'Latency', value: '< 25ms' },
     ],
-    tech: ['Go', 'Kafka', 'Redis Cluster', 'Docker', 'React', 'gRPC'],
-    github: 'https://github.com/gagan-dev/nexus-stream',
-    live: 'https://nexus-stream-demo.gagan.dev',
+    tech: ['React', 'Node.js', 'Web Crypto API', 'Express', 'Redis', 'Tailwind CSS'],
+    github: 'https://github.com/gagan2007jadaun/PrivLink',
+    live: 'https://github.com/gagan2007jadaun/PrivLink',
     featured: true,
     accentColor: 'var(--accent-cyan)',
     architecture: `Architecture Overview:
-• Distributed Broker Cluster using Go raft consensus.
-• In-memory ring buffer memory pool to eliminate garbage collection pauses.
-• Real-time WebSocket & gRPC bridge for web UI metric monitoring.`,
+• Client-side Web Crypto API key generation ensuring unencrypted data never touches server network sockets.
+• In-memory ephemeral Redis store for instant payload expiration and auto-purge after access.
+• Secure tokenized URL routing with rate-limiting throttling guards.`,
   },
   {
-    id: 'cortex-rag',
-    title: 'CortexRAG — Intelligent Enterprise Search',
-    category: 'ai',
-    categoryLabel: 'AI & Neural Systems',
-    description: 'Context-aware semantic knowledge engine combining hybrid dense vector retrieval with LLM graph synthesis.',
+    id: 'zynk',
+    title: 'ZYNK — Real-Time Collaborative Workspace',
+    category: 'fullstack',
+    categoryLabel: 'Full-Stack & Real-Time',
+    description: 'High-performance real-time collaboration engine supporting instant messaging, WebSocket state sync, dynamic rooms, and live media sharing.',
     metrics: [
-      { label: 'Doc Ingestion', value: '50K pages/min' },
-      { label: 'Query Recall', value: '96.2%' },
-      { label: 'Cost Reduction', value: '45%' },
+      { label: 'Sync Latency', value: '< 15ms' },
+      { label: 'Protocol', value: 'WebSockets' },
+      { label: 'Concurrence', value: 'Multi-Room' },
     ],
-    tech: ['Python', 'FastAPI', 'LangChain', 'Qdrant Vector DB', 'Next.js', 'PostgreSQL'],
-    github: 'https://github.com/gagan-dev/cortex-rag',
-    live: 'https://cortex-rag-demo.gagan.dev',
+    tech: ['React', 'TypeScript', 'WebSockets', 'Node.js', 'Express', 'MongoDB'],
+    github: 'https://github.com/gagan2007jadaun/ZYNK',
+    live: 'https://github.com/gagan2007jadaun/ZYNK',
     featured: true,
     accentColor: 'var(--accent-purple)',
     architecture: `Architecture Overview:
-• Multi-modal chunking pipeline utilizing SentenceTransformers.
-• Two-stage re-ranking algorithm (Cross-Encoder + BM25 hybrid).
-• Async streaming SSE response protocol with client-side token rendering.`,
+• Event-driven WebSocket engine with automatic reconnection heartbeat monitoring.
+• Room-based broadcast channel architecture for isolated state updates and instant messaging.
+• Optimistic UI updates with client-side state reconciliation.`,
   },
   {
-    id: 'synthwave-canvas',
-    title: 'SynthWave — 3D Audio Visualizer Studio',
-    category: 'fullstack',
-    categoryLabel: 'Full-Stack Apps',
-    description: 'Interactive web visualizer synth generating real-time WebGL shader GPU FX driven by audio frequency decomposition.',
+    id: 'earth-pulse-monitor',
+    title: 'Earth-Pulse-Monitor — Global Seismic Telemetry',
+    category: 'systems',
+    categoryLabel: 'Systems & WebGL Visualizer',
+    description: 'Interactive 3D Earth visualization platform monitoring real-time seismic events, planetary telemetry, and climate sensor feeds.',
     metrics: [
       { label: 'Frame Rate', value: '60 FPS' },
-      { label: 'Audio Latency', value: '12ms' },
-      { label: 'GPU Draw Calls', value: '< 15' },
+      { label: 'Data Source', value: 'Live Telemetry' },
+      { label: 'Visual Engine', value: 'Three.js' },
     ],
-    tech: ['React', 'Three.js', 'Web Audio API', 'GLSL Shaders', 'TypeScript'],
-    github: 'https://github.com/gagan-dev/synthwave-canvas',
-    live: 'https://synthwave-studio.gagan.dev',
+    tech: ['React', 'Three.js', 'WebGL', 'GeoJSON', 'Open API', 'Tailwind CSS'],
+    github: 'https://github.com/gagan2007jadaun/Earth-Pulse-Monitor',
+    live: 'https://github.com/gagan2007jadaun/Earth-Pulse-Monitor',
     featured: true,
-    accentColor: 'var(--accent-pink)',
-    architecture: `Architecture Overview:
-• Custom Fragment & Vertex GLSL Shaders for audio reactive mesh deformation.
-• Web Audio AnalyserNode FFT processing in a dedicated Web Worker thread.
-• Export pipeline supporting WebM video canvas recordings.`,
-  },
-  {
-    id: 'cloud-guard',
-    title: 'CloudGuard — Automated K8s Sentinel',
-    category: 'systems',
-    categoryLabel: 'Systems & Cloud',
-    description: 'Security & compliance auditor for Kubernetes clusters with automated drift detection and instant remediations.',
-    metrics: [
-      { label: 'Scan Speed', value: '1,000 pods/sec' },
-      { label: 'CVE Detection', value: 'Real-time' },
-      { label: 'FPR', value: '< 0.01%' },
-    ],
-    tech: ['Go', 'Kubernetes API', 'OPA Rego', 'Prometheus', 'Grafana', 'React'],
-    github: 'https://github.com/gagan-dev/cloud-guard',
-    live: 'https://cloud-guard.gagan.dev',
-    featured: false,
     accentColor: 'var(--accent-emerald)',
     architecture: `Architecture Overview:
-• Admission Controller webhook in Kubernetes intercepting manifest deployments.
-• Real-time Prometheus metrics exporter with Grafana dashboard integration.`,
+• Interactive Three.js 3D sphere mesh rendering geocoded coordinate point clouds in real time.
+• Async stream parser consuming global seismic and meteorological API feeds.
+• Custom shader uniforms for pulse wave rendering around active epicenter coordinate locations.`,
   },
   {
-    id: 'dev-flow',
-    title: 'DevFlow — AI Pair Programming Workspace',
+    id: 'calx-g',
+    title: 'CALX-G — Advanced Computational Engine',
     category: 'ai',
-    categoryLabel: 'AI & Neural Systems',
-    description: 'Collaborative cloud IDE with AI inline refactoring, AST code graph analysis, and instant sandbox previews.',
+    categoryLabel: 'AI & Computational Engines',
+    description: 'Scientific calculator and high-speed mathematical engine designed for complex expression parsing, matrix transformations, and numerical algorithms.',
     metrics: [
-      { label: 'User Rating', value: '4.9 / 5' },
-      { label: 'Latency', value: '85ms' },
-      { label: 'Active Users', value: '12,500+' },
+      { label: 'Precision', value: 'High-Float' },
+      { label: 'Engine', value: 'Algorithmic' },
+      { label: 'Exec Speed', value: 'Instant' },
     ],
-    tech: ['Next.js', 'TypeScript', 'WebContainers API', 'Monaco Editor', 'Node.js'],
-    github: 'https://github.com/gagan-dev/dev-flow',
-    live: 'https://devflow-ide.gagan.dev',
+    tech: ['Python', 'FastAPI', 'React', 'TypeScript', 'NumPy', 'MathJS'],
+    github: 'https://github.com/gagan2007jadaun/CALX-G',
+    live: 'https://github.com/gagan2007jadaun/CALX-G',
     featured: false,
-    accentColor: 'var(--accent-blue)',
     architecture: `Architecture Overview:
-• In-browser Node.js runtime using WebContainers for zero-server execution.
-• Real-time collaborative operational transformation (OT) sync.`,
-  },
-  {
-    id: 'vault-pay',
-    title: 'VaultPay — Cross-Border Payment Protocol',
-    category: 'fullstack',
-    categoryLabel: 'Full-Stack Apps',
-    description: 'High-security fintech gateway enabling instant cryptographic settlement and multi-currency ledger management.',
-    metrics: [
-      { label: 'Tx Volume', value: '$12M+' },
-      { label: 'Settlement Time', value: '2.1 sec' },
-      { label: 'Compliance', value: 'SOC 2 Type II' },
-    ],
-    tech: ['React', 'Node.js', 'PostgreSQL', 'Stripe API', 'Docker', 'Redis'],
-    github: 'https://github.com/gagan-dev/vault-pay',
-    live: 'https://vaultpay-fintech.gagan.dev',
-    featured: false,
-    accentColor: 'var(--accent-amber)',
-    architecture: `Architecture Overview:
-• Double-entry accounting transaction engine enforcing strict ledger invariants.
-• Encrypted payload signing with hardware security module (HSM) hooks.`,
+• Abstract Syntax Tree (AST) expression parser evaluating complex mathematical formulas.
+• High-efficiency matrix calculation engine supporting linear algebra transformations.`,
   },
 ];
 

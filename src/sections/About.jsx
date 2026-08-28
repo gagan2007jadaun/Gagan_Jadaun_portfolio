@@ -13,28 +13,28 @@ const techCategories = [
 
 const techStack = [
   // Frontend
-  { name: 'React / Next.js', category: 'frontend', level: 95, exp: '5 yrs', icon: Code2, highlight: true },
-  { name: 'TypeScript', category: 'frontend', level: 92, exp: '4 yrs', icon: Terminal, highlight: true },
-  { name: 'Three.js / WebGL', category: 'frontend', level: 85, exp: '3 yrs', icon: Box, highlight: true },
-  { name: 'Tailwind CSS / Vanilla', category: 'frontend', level: 98, exp: '5 yrs', icon: Globe },
+  { name: 'React / Next.js', category: 'frontend', level: 95, exp: 'Hands-on', icon: Code2, highlight: true },
+  { name: 'TypeScript', category: 'frontend', level: 92, exp: 'Projects', icon: Terminal, highlight: true },
+  { name: 'Three.js / WebGL', category: 'frontend', level: 85, exp: 'Projects', icon: Box, highlight: true },
+  { name: 'Tailwind CSS / Vanilla', category: 'frontend', level: 98, exp: 'Fluent', icon: Globe },
 
   // Backend
-  { name: 'Node.js / Express', category: 'backend', level: 94, exp: '5 yrs', icon: Server, highlight: true },
-  { name: 'Python / FastAPI', category: 'backend', level: 90, exp: '4 yrs', icon: Cpu, highlight: true },
-  { name: 'Go (Golang)', category: 'backend', level: 82, exp: '2 yrs', icon: Layers },
-  { name: 'GraphQL / REST APIs', category: 'backend', level: 92, exp: '4 yrs', icon: Globe },
+  { name: 'Node.js / Express', category: 'backend', level: 94, exp: 'Hands-on', icon: Server, highlight: true },
+  { name: 'Python / FastAPI', category: 'backend', level: 90, exp: 'Projects', icon: Cpu, highlight: true },
+  { name: 'Go (Golang)', category: 'backend', level: 82, exp: 'Learner', icon: Layers },
+  { name: 'GraphQL / REST APIs', category: 'backend', level: 92, exp: 'Hands-on', icon: Globe },
 
   // AI & Data
-  { name: 'PostgreSQL / Supabase', category: 'ai', level: 90, exp: '4 yrs', icon: Database, highlight: true },
-  { name: 'Redis Cache Cluster', category: 'ai', level: 88, exp: '3 yrs', icon: Database },
-  { name: 'LangChain & LlamaIndex', category: 'ai', level: 86, exp: '2 yrs', icon: Sparkles, highlight: true },
-  { name: 'Vector DBs (Qdrant/Pinecone)', category: 'ai', level: 85, exp: '2 yrs', icon: Cpu },
+  { name: 'PostgreSQL / Supabase', category: 'ai', level: 90, exp: 'Projects', icon: Database, highlight: true },
+  { name: 'Redis Cache Cluster', category: 'ai', level: 88, exp: 'Projects', icon: Database },
+  { name: 'LangChain & LlamaIndex', category: 'ai', level: 86, exp: 'Projects', icon: Sparkles, highlight: true },
+  { name: 'Vector DBs (Qdrant/Pinecone)', category: 'ai', level: 85, exp: 'Projects', icon: Cpu },
 
   // Infrastructure
-  { name: 'Docker & Kubernetes', category: 'devops', level: 88, exp: '3 yrs', icon: Cloud, highlight: true },
-  { name: 'AWS (Lambda, S3, ECS)', category: 'devops', level: 86, exp: '4 yrs', icon: Cloud },
-  { name: 'CI/CD Pipelines (GitHub)', category: 'devops', level: 92, exp: '4 yrs', icon: ShieldCheck },
-  { name: 'Terraform Infrastructure', category: 'devops', level: 80, exp: '2 yrs', icon: Layers },
+  { name: 'Docker & Kubernetes', category: 'devops', level: 88, exp: 'Projects', icon: Cloud, highlight: true },
+  { name: 'AWS (Lambda, S3, ECS)', category: 'devops', level: 86, exp: 'Certified', icon: Cloud },
+  { name: 'CI/CD Pipelines (GitHub)', category: 'devops', level: 92, exp: 'Hands-on', icon: ShieldCheck },
+  { name: 'Terraform Infrastructure', category: 'devops', level: 80, exp: 'Learner', icon: Layers },
 ];
 
 const philosophyCards = [
